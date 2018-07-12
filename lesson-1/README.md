@@ -32,14 +32,17 @@ For everyone who worked with Node.js last semester, npm should already be instal
 
 **HTML - Hypertext Markup Language**
 * The language that describes the components of a webpage like the text, buttons, forms, and so on
+* Here's a link to learn more about HTML - https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started
 
 **CSS - Cascading Style Sheets**
 * Used to style the design of the components of the page
 * Changing the font color or size, setting the size of components or changing how they appear to the user
+* Here's a link to learn more about CSS - https://developer.mozilla.org/en-US/docs/Learn/CSS 
 
 **Javascript**
 * Make websites dynamic by giving us the ability to change parts of the page based on certain conditions like user actions
 * For example, triggering a message to pop up once a form is submitted
+* Here's a link to learn more about Javascript - https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics 
 
 
 
