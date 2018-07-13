@@ -8,27 +8,29 @@ We’re excited to be teaching Electron this semester, a framework that lets you
 
 Electron uses web pages as the basis for application windows, and so if you know how to write HTML/CSS code, you can get started writing Electron apps almost immediately. 
 
-So if Electron is basically just a wrapper for a website, why do we need to use it? The really awesome part of Electron is that it gives you a lot more control and access to your computer than a typical web app through its rich operating system API’s. This means we can do things that a normal website wouldn’t be able to do like read and write to the file system, read CPU and other hardware usage statistics, and do pretty much anything else a normal desktop app would do. 
+You might be wondering, if Electron is basically just a wrapper for a website, why do we need it? The really awesome part of Electron is that it gives you a lot more control and access to the users computer than a typical web app through its rich operating system API’s. This means we can do things that a normal website wouldn’t be able to do like read and write to the file system, read CPU and other hardware usage statistics, and do pretty much anything else a normal desktop app would do. 
 
 ## **Setup**
 
 Before we write any code, we need to get everyone on the same page in terms of setup. 
 
-For our curriculum this semester, we will be using Visual Studio code as our editor, and recommend that everyone use it as well to make sure that the lessons are as easy and helpful as possible. 
+For our curriculum this semester, we will be using Visual Studio Code as our editor, and recommend that everyone use it as well to make sure that the lessons are as easy and helpful as possible. 
 
-You can install VS Code with the link below by just following the prompts after downloading the version for the operating system your running
+You can install VS Code with the link below by just following the prompts after downloading the version for the operating system you're currently running
 https://code.visualstudio.com/Docs/setup/setup-overview
 
-Visual studio code is a really powerful editor and one of its most awesome features is its built in debugging, which may come in handy this semester or for any of your other projects. Tge link below shows you how to set up debugging within VS Code for electron projects https://electronjs.org/docs/tutorial/debugging-main-process-vscode
+Visual studio code is a powerful editor and one of its best features is its built in debugging, which may come in handy this semester or for any of your other projects. The link below shows you how to set up debugging within VS Code for electron projects https://electronjs.org/docs/tutorial/debugging-main-process-vscode
 
-Here is a video that goes through the installation overview of the basic features
+If this is your first time using VS Code, you might be interested in this video that goes through the installation process and goes over the basic features of the editor
 https://code.visualstudio.com/docs/introvideos/basics
 
-Electron can be installed as a package through NPM (Node Package Manager), which we will do locally once we create our first project. 
+Now that we have our editor installed, we need to install Electron. This can be done through NPM (Node Package Manager), which we will do locally once we create our first project. 
 
 For everyone who worked with Node.js last semester, npm should already be installed on your computer because its installed together with Node. If anyone doesn’t have Node.js or npm installed, you can get it here https://nodejs.org/en/. We will be using Node version 8.9.3 and Electron version 2.0.2 as recommended by the Electron webpage and recommend these versions for all Scopers this semester. 
 
 ## **Overview of HTML, CSS, and Javascript**
+
+All of our Electron projects this semester will be using HTML, CSS, and Javascript because Electron application windows are basically webpages with extra fuctionality. Therefore, its important that everyone understand the basics of these three languages. There a short descriptions provided below as well as links for those of you who don't have much experience with HTML, CSS, or Javascript and we encourage you to explore these topics in more detail before our next meeting.
 
 **HTML - Hypertext Markup Language**
 * The language that describes the components of a webpage like the text, buttons, forms, and so on
