@@ -1,53 +1,38 @@
 # **Lesson 4 - Markdown Editor**
 **Introduction**
 
-In this lesson we’ll be creating an editor that will let us write Markdown quickly and easily on our desktop. We’ll be learning how to use keyboard shortcuts and save to the system clipboard which will make our app more convenient and faster to use. 
+In this lesson we’ll be creating a text editor that will let us write Markdown quickly and easily on our desktop. We’ll be learning how to use keyboard shortcuts and save to the system clipboard which will make our app more convenient and faster to use. 
 
 **Part 1: Setup**
 
-Prerequisites
-Electron. Make sure you have the right version of electron and node
+We've included a package.json, basic index.js and a number of CSS files in this lessons folder to make starting the project easier. If you look at the index.js, it basically creates a new window, loads 'index.html' into it, and displays it when the app is ready. It also handles closing windows and the application, which are things we have covered in previous lessons.
 
-`node -v // should print 8.x`
-`electron -v // should print 2.0.x`
+Once you install the project dependencies with `npm install` you'll be ready to start coding.
 
-**Installing**
-
-Clone the repo
-`git clone https://github.com/scopeusc/futureRepoWithCode`
-
-Install dependencies
-
-`npm install`
-
-Running the project
-
-`npm start`
 
 **Creating the App**
 
-Now that we have the basic skeleton of an electron app running, let's start building our markdown editor.
+The entry point in our package.json is index.js, which loads the main window with index.html, so let's start by creating this file. 
 
-The first thing we need is the basic html of our main window that will show us two separate views, one for us type markdown in, and the other to show us the result.
+We need our main window to show us two separate views, one for us type markdown in, and the other to show us the result. The idea is that we'll be able to type markdown on the left side and see the result on the right side. 
 
 ```
 <div class="container-fluid">
         <div class="row w-100">
           <div id="leftSide" class="col">
-            <textarea type="text" id="input" onkeyup="updateMarkdown()"></textarea>
+            <textarea type="text" id="input"></textarea>
           </div>
           <div id="rightSide" class="col">
           </div>
         </div>
         <div id="footer" class="row">
             <div class="col w-100">
-              <button type="button" id="copyButton" onclick="copyText()" class="btn">Copy Text</button>
             </div>
         </div>
 </div>
 ```
 
-We’re using bootstrap to make some of the dynamic sizing easy, and also some custom CSS so we need to include links to these things at the top of our index.html. 
+We’re using bootstrap to make some of the dynamic sizing easy, and also some custom CSS that will control the styling for our window.
 
 Create an index.css file and add the following code
 ```
@@ -79,12 +64,47 @@ html, body {
     outline: none;
 }
 ```
-Now that we have styling for the page, we need to include the node module that will translate the markdown for us. 
+Now that we have styling for the page, we need to add a link to this CSS file and a link to Bootstrap within
+the head elements of our index.html file
+```
+<link rel="stylesheet" type="text/css" href="index.css" />
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+```
 
-`npm install marked --save-dev `
+When we run the app now with `npm start` you should see a window that opens with two sides, we can type into the left side,
+but nothing happens yet. 
 
-This installs the marked module and saves it as a dependency of our project. Now we will make a new Javascript file that will have the logic for translating our text into markdown. In this file we will require the marked module and then use it to set the innerHTML of our output div. We will trigger the function that does this every time a key is pressed in our input textarea box. 
+We want whatever we type on the left to show up on the right, and we can do this with Javascript. Let's add some script tags to the bottom of our index.html file that will handle this logic. We want a function that will take the text entered in the text area on the left, and display it on the right after rending the text according to the Markdown tags. 
 
-Once this is done, we will have a basic version of a live markdown editor that will run as a native desktop application. 
+```
+<script>
+    function updateRightSide () {
+        var inputText = document.getElementById('input').value;
+        document.getElementById('rightSide').innerHTML = inputText;
+    }
+</script>
+```
+We want this function to run every time the text we type in changes so that the right side is always up-to-date. We can do this pretty easily by running the function every time a key is pressed in our text input area. We can do this using the `onkeyup` html attribute. Our text area input on the left side needs to run our updating function on this event which it can do with 
+
+`<textarea type="text" id="input" onkeyup="updateRightSide()"></textarea>`
+
+This function will constantly update the display on the right when text is entered, which you should be able to see if you run the app again. However, the right side doesn't yet know how to handle any Markdown, so we'll add that now. 
+
+Luckily there is a node module called 'marked' that can translate Markdown for us that we have already installed as a dependency because it was included in the package.json file for this lesson. To use it, we need to add 
+
+`const marked = require('marked');`
+
+above our update function. We want to translate our Markdown entered on the left and display it on the right side, so all we have to do is convert our text with the 'marked()' function included in the marked module. We will now set the innerHTML of the right side to our converted text, which should look like this 
+
+`document.getElementById('rightSide').innerHTML = marked(inputText);`
+
+Once this is done, run the app with `npm start` and you'll see that we now have a basic version of a live markdown editor that will run as a native desktop application. The resulting Markdown might not be as nicely styled as what you're used to, but we can change this by adding two extra CSS files that will make our Markdown a little bit more like what you would see on Github. Include links to these files at the top of our index.html with
+
+```
+<link rel="stylesheet" href="skeleton.css">
+<link rel="stylesheet" href="normalize.css">
+```
+
+You can now use this application to make well formatted and beautiful readme's for your current and future Github projects :)
 
 
