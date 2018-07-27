@@ -1,4 +1,4 @@
-Before beginning, be sure to change your working directory to the scope-f18 repository.  Once you’re inside the repository, change directory once again to the lesson-6 folder.  Run a quick npm install from there to be sure that Node is properly setup.
+Before beginning, be sure to change your working directory to the **scope-f18** repository.  Once you’re inside the repository, change directory once again to the **lesson-6** folder.  Run a quick npm install from there to be sure that Node is properly setup.
 
 # Dependencies: electron-packager
 This week, we’ll be working on packaging up your Electron application in order to allow easy sharing and use of your new software.  To do this, we’ll be using the electron-packager tool.
@@ -18,11 +18,11 @@ The architecture determines which processing environment the program will be bui
 The electron version specifies which version of electron you’ll use (latest now is 2.0.5).
 
 So, an example packaging command may be:
-
+```
 electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2.0.5
-
+```
 # Scripting the packaging of our application
-Another way that you could build your final application package is by adding a script to the package.json file.  Take the below file for example:
+Another way that you could build your final application package is by adding a script to the **package.json** file.  Take the below file for example:
 ```
 "scripts": {
   "start": "electron .",
