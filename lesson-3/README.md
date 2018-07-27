@@ -1,6 +1,6 @@
-Before beginning, be sure to change your working directory to the scope-f18 repository.  Once you’re inside the repository, change directory once again to the lesson-3 folder.  Run a quick npm install from there to be sure that Node is properly setup.
+Before beginning, be sure to change your working directory to the **scope-f18** repository.  Once you’re inside the repository, change directory once again to the lesson-3 folder.  Run a quick npm install from there to be sure that Node is properly setup.
 # Creating a package.json
-First, we must create the package.json file, which specifies some of our project details.
+First, we must create the **package.json** file, which specifies some of our project details.
 
 For now, you can start off with the sample shown below:
 ```
@@ -22,7 +22,7 @@ In order to verify that we’re able to render a browser window in Electron, we�
 ```
 Note: no `<html>`, `<head>`, `<body>`, or the related closing tags are needed for this example.
 # Creating a simple main.js
-As we specified within our package.json file, a file called main.js will contain the main process of our project.  Below, we’ve produced a main.js that will simply use Electron to build a simple browser window (800x600 in size) that renders our index.html.
+As we specified within our **package.json** file, a file called **main.js** will contain the main process of our project.  Below, we’ve produced a main.js that will simply use Electron to build a simple browser window (800x600 in size) that renders our index.html.
 ```
 'use strict';
 
@@ -48,9 +48,9 @@ We’ll need to make some changes to main.js:
 
 First, set the height specification to 700
 Next, set the width specification to 368
-Finally, add two lines after the dimension specifications: frame: false,
-								       resizable: false
-
+Finally, add two lines after the dimension specifications:  
+`frame: false,`  
+`resizable: false`  
 * Note: be sure that the last specification in the list does not have a comma following it.
 
 Last but not least, we’ll need to display the interactive portion of the sound machine in the window.  Add the following excerpt to app/js/index.js:
