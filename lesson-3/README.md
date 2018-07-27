@@ -51,7 +51,8 @@ Next, set the width specification to 368
 Finally, add two lines after the dimension specifications:  
 `frame: false,`  
 `resizable: false`  
-* Note: be sure that the last specification in the list does not have a comma following it.
+
+*Note: be sure that the last specification in the list does not have a comma following it.*
 
 Last but not least, we’ll need to display the interactive portion of the sound machine in the window.  Add the following snippet to **app/js/index.js**:
 ```
