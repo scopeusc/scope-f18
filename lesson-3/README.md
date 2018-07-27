@@ -46,9 +46,9 @@ Great work so far!  While the example application above does demonstrate the bas
 
 We’ll need to make some changes to **main.js**:
 
-First, set the height specification to 700
-Next, set the width specification to 368
-Finally, add two lines after the dimension specifications:  
+1. First, set the height specification to 700
+2. Next, set the width specification to 368
+3. Finally, add two lines after the dimension specifications:  
 `frame: false,`  
 `resizable: false`  
 
