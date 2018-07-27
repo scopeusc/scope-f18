@@ -20,7 +20,7 @@ In order to verify that we’re able to render a browser window in Electron, we�
 <br />
 <h2>Welcome to Lesson 3</h2>
 ```
-Note: no <html>, <head>, <body>, or the related closing tags are needed for this example.
+Note: no `<html>`, `<head>`, `<body>`, or the related closing tags are needed for this example.
 # Creating a simple main.js
 As we specified within our package.json file, a file called main.js will contain the main process of our project.  Below, we’ve produced a main.js that will simply use Electron to build a simple browser window (800x600 in size) that renders our index.html.
 ```
@@ -54,7 +54,7 @@ Finally, add two lines after the dimension specifications: frame: false,
 * Note: be sure that the last specification in the list does not have a comma following it.
 
 Last but not least, we’ll need to display the interactive portion of the sound machine in the window.  Add the following excerpt to app/js/index.js:
-
+```
 'use strict';
 
 var soundButtons = document.querySelectorAll('.button-sound');
@@ -75,38 +75,39 @@ function prepareButton(buttonEl, soundName) {
         audio.play();
     });
 }
-
+```
 Once again, we can now run our app using npm start.
 Configuring inter-process communications
 Another aspect of Electron is the use of inter-process communication modules (IPCs).  An IPC allows you to send/receive messages on a channel, in a sort of publisher/subscriber model.
 
 To subscribe our application to the channel on which close-window events will be received, add the following code block to your main.js:
-
+```
 var ipc = require('ipc');
 
 ipc.on('close-main-window', function () {
     app.quit();
 });
-
+```
 Next, in order to send the message on that channel, add the following code to index.js:
-
+```
 var ipc = require('ipc');
 
 var closeEl = document.querySelector('.close');
 closeEl.addEventListener('click', function () {
     ipc.send('close-main-window');
 });
-
+```
 Finally, define the close button as non-draggable by adding this attribute to index.css:
-
+```
 .settings {
     ...
     -webkit-app-region: no-drag;
 }
+```
 Catching native GUI events to trigger window events
 Let’s begin by adding two basic shortcuts to our application.  Shortcuts must first be registered, which can be done by adding the following code to your main.js file:
 
-
+```
 var globalShortcut = require('global-shortcut');
 
 app.on('ready', function() {
@@ -119,3 +120,4 @@ app.on('ready', function() {
         mainWindow.webContents.send('global-shortcut', 1);
     });
 });
+```
