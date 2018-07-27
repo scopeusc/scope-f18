@@ -1,9 +1,9 @@
 Before beginning, be sure to change your working directory to the scope-f18 repository.  Once you’re inside the repository, change directory once again to the lesson-3 folder.  Run a quick npm install from there to be sure that Node is properly setup.
-Creating a package.json
+# Creating a package.json
 First, we must create the package.json file, which specifies some of our project details.
 
 For now, you can start off with the sample shown below:
-
+```
 {
 	“name”: “lesson-3”,
 	“version”: “0.1.0”,
@@ -12,17 +12,18 @@ For now, you can start off with the sample shown below:
 		“start”: “electron .”
 	}
 }
-Creating an index.html
+```
+# Creating an index.html
 In order to verify that we’re able to render a browser window in Electron, we’re going to create an incredibly simple HTML.  You can use the sample below, or something like it.
-
+```
 <h1>Hello, Scope!</h1>
 <br />
 <h2>Welcome to Lesson 3</h2>
-
+```
 Note: no <html>, <head>, <body>, or the related closing tags are needed for this example.
-Creating a simple main.js
+# Creating a simple main.js
 As we specified within our package.json file, a file called main.js will contain the main process of our project.  Below, we’ve produced a main.js that will simply use Electron to build a simple browser window (800x600 in size) that renders our index.html.
-
+```
 'use strict';
 
 var app = require('app');
@@ -38,7 +39,7 @@ app.on('ready', function() {
 
     mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
 });
-
+```
 Now, try running your application with npm start.
 Adapting the main process for a sound board
 Great work so far!  While the example application above does demonstrate the basic needs of our application, let’s make some slight changes to make it feel more like a sound machine.
