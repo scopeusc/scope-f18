@@ -22,7 +22,7 @@ In order to verify that we’re able to render a browser window in Electron, we�
 ```
 Note: no `<html>`, `<head>`, `<body>`, or the related closing tags are needed for this example.
 # Creating a simple main.js
-As we specified within our **package.json** file, a file called **main.js** will contain the main process of our project.  Below, we’ve produced a main.js that will simply use Electron to build a simple browser window (800x600 in size) that renders our index.html.
+As we specified within our **package.json** file, a file called **main.js** will contain the main process of our project.  Below, we’ve produced a **main.js** that will simply use Electron to build a simple browser window (800x600 in size) that renders our index.html.
 ```
 'use strict';
 
@@ -44,7 +44,7 @@ Now, try running your application with npm start.
 Adapting the main process for a sound board
 Great work so far!  While the example application above does demonstrate the basic needs of our application, let’s make some slight changes to make it feel more like a sound machine.
 
-We’ll need to make some changes to main.js:
+We’ll need to make some changes to **main.js**:
 
 First, set the height specification to 700
 Next, set the width specification to 368
@@ -53,7 +53,7 @@ Finally, add two lines after the dimension specifications:
 `resizable: false`  
 * Note: be sure that the last specification in the list does not have a comma following it.
 
-Last but not least, we’ll need to display the interactive portion of the sound machine in the window.  Add the following excerpt to app/js/index.js:
+Last but not least, we’ll need to display the interactive portion of the sound machine in the window.  Add the following snippet to **app/js/index.js**:
 ```
 'use strict';
 
@@ -80,7 +80,7 @@ Once again, we can now run our app using npm start.
 Configuring inter-process communications
 Another aspect of Electron is the use of inter-process communication modules (IPCs).  An IPC allows you to send/receive messages on a channel, in a sort of publisher/subscriber model.
 
-To subscribe our application to the channel on which close-window events will be received, add the following code block to your main.js:
+To subscribe our application to the channel on which close-window events will be received, add the following code block to your **main.js**:
 ```
 var ipc = require('ipc');
 
@@ -88,7 +88,7 @@ ipc.on('close-main-window', function () {
     app.quit();
 });
 ```
-Next, in order to send the message on that channel, add the following code to index.js:
+Next, in order to send the message on that channel, add the following code to **index.js**:
 ```
 var ipc = require('ipc');
 
@@ -97,7 +97,7 @@ closeEl.addEventListener('click', function () {
     ipc.send('close-main-window');
 });
 ```
-Finally, define the close button as non-draggable by adding this attribute to index.css:
+Finally, define the close button as non-draggable by adding this attribute to **index.css**:
 ```
 .settings {
     ...
@@ -105,7 +105,7 @@ Finally, define the close button as non-draggable by adding this attribute to in
 }
 ```
 Catching native GUI events to trigger window events
-Let’s begin by adding two basic shortcuts to our application.  Shortcuts must first be registered, which can be done by adding the following code to your main.js file:
+Let’s begin by adding two basic shortcuts to our application.  Shortcuts must first be registered, which can be done by adding the following code to your **main.js** file:
 
 ```
 var globalShortcut = require('global-shortcut');
