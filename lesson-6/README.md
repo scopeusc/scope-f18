@@ -7,9 +7,9 @@ To start, run npm install electron-packager -g which will install from node pack
 
 Manually packaging our application
 There are two ways to package our application with electron-packager.  The first of those is done via the command-line interface.  You must run the command:
-
+```
 electron-packager <location of project> <name of project> <platform> <architecture> <electron version> <optional options>
-
+```
 Where:
 The location of the project is simply the root directory of the project (i.e. .../lesson-6)
 The name of the project is a cool title that will be attached to the final package
@@ -23,10 +23,10 @@ electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2
 
 Scripting the packaging of our application
 Another way that you could build your final application package is by adding a script to the package.json file.  Take the below file for example:
-
+```
 "scripts": {
   "start": "electron .",
   "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2.0.5"
 }
-
+```
 The above package.json would allow you to simply run npm run-script package from your project directory (../lesson-6) and it would run the same command that we just ran manually.
