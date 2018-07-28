@@ -1,0 +1,13 @@
+{
+  "name": "electron-pomodoro-timer",
+  "version": "1.0.0",
+  "description": "Lesson 2 of Scope Fall 2018 - Creating your first window with a native menu bar",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^2.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  }
+}
