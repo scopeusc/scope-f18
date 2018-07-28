@@ -105,6 +105,16 @@ Once this is done, run the app with `npm start` and you'll see that we now have 
 <link rel="stylesheet" href="normalize.css">
 ```
 
-You can now use this application to make well formatted and beautiful readme's for your current and future Github projects :)
+Our app is working now! Although, there is one feature we could add to make our app a little more useful since we'll always be copying and pasting our Markdown somewhere else after we're done formatting. We can make our lives easier by including a button that can save our text to the clipboard, which Electron can easily interface with if we import the clipboard module. 
+
+If we add a button to our index.html page, we just need the onclick action to run the following function
+```
+function copyText() {
+    const {clipboard} = require('electron')
+    clipboard.writeText(document.getElementById("input").value)
+}
+```
+This function just uses the clipboard module to write the text we have input to the system clipboard so that we can paste it wherever we need it easily. 
+Our application is now completed and you can use it to make well formatted and beautiful readme's for your current and future Github readme's or anything else :)
 
 
