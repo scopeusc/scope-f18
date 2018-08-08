@@ -57,7 +57,7 @@ If you run the app now, you will see that there is a button called `start` on th
 ## Part 4 - Connect menu with timer
 This is probably the most important part of this lesson, and you will learn a very important topic of electron.
 
-There are two js files inside your project folder so far, and they run in separate processes. Main.js runs in the application process, and renderer.js runs in the window process. It is crucial to have each window to be sandboxed in its own process, so a crash of a single process does not make the entire application unresponsive. It is also good for security reasons.
+There are two js files inside your project folder so far, and they run in separate processes. `main.js` runs in the application process, and `renderer.js` runs in the window process. It is crucial to have each window to be sandboxed in its own process, so a crash of a single process does not make the entire application unresponsive. It is also good for security reasons.
 
 However, communication between processes is difficult, but luckily, electron has an easy-to-use ipc(interprocess communication) API. Using this API, you can send any messages with a channel name between any processes.
 
@@ -89,7 +89,7 @@ ipc.on('start timer', function (event, arg) {
    startTimer(arg);
 });
 ```
-To receive ‘5’ and pass it in function startTimer to start the timer.
+To receive `5` and pass it in function `startTimer` to start the timer.
 
 `startTimer(timeInSeconds)` is a function already written for you in `renderer.js`. If you call the function with a number `n`, it will start an `n`-second timer 
 

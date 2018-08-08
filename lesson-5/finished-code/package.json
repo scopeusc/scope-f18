@@ -1,0 +1,14 @@
+{
+  "name": "electron-youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "dependencies": {
+    "electron": "^2.0.5",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  }
+}
