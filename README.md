@@ -7,7 +7,7 @@ This is the Scope Fall 2018 GitHub curriculum repository! Here you'll find proje
 * Lesson 2: Pomodoro Timer - Native Menu System
 * Lesson 3: Simple Soundboard - Filesystem API
 * Lesson 4: Markdown Editor - System Clipboard and Keyboard Shortcuts
-* Lesson 5: Youtube App - Interprocess Communication and Windows Management
+* Lesson 5: Cryptocurrency Tracker - Interprocess Communication and Windows Management
 * Lesson 6: App Deployment and Review
 
 ### Using This Repo
