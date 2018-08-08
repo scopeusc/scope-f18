@@ -107,7 +107,7 @@ You are probably already familiar with the setup at this point. Navigate to `les
 ```
 npm install
 ```
-to get your project ready.
+in your terminal to get your project ready.
 
 **Project Structure:**
 
@@ -143,6 +143,11 @@ ipc.on('crypto-data', function (event, arg) {
 ```
 
 Here we are simply receiving the data we sent from `main.js`. The actual data processing is already done for you. You can take a look at `refreshTable` if you are interested.
+
+Run your application with `npm start` inside your working directory (The same folder where your `package.json` is, not `src` folder!). You should see something like this:
+![Main UI](ui1.png)
+
+I am sorry if you are bothered by the misalignment of the prices. UI is not the priority of this lesson. However, it can be a good exercise for you to fix it.
 
 ## Part 5 - Create the popup windows
 In this final part of the tutorial, we are sending a message from the a render process and processing it in `main.js`
@@ -215,4 +220,7 @@ window.on('closed', () => {
 ```
 `closed` is another special reserved event. In this case, we tell electron to close the app when the main window is closed.
 
-By now you should hopefully be pro at electron ipc. This is actually a very important topic, because it also extends to web development. You can [explore](https://www.w3schools.com/html/html5_webworkers.asp) if you are interested
+If you run the application and click the popout buttons, you get little floating windows that you can freely drag around on your screen:
+![popup](ui2.png)
+
+By now you should hopefully be pro at electron ipc. This is a very important topic, because it also extends to web development. You can [explore](https://www.w3schools.com/html/html5_webworkers.asp) if you are interested
