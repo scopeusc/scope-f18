@@ -221,6 +221,7 @@ window.on('closed', () => {
 `closed` is another special reserved event. In this case, we tell electron to close the app when the main window is closed.
 
 If you run the application and click the popout buttons, you get little floating windows that you can freely drag around on your screen:
+
 ![popup](ui2.PNG)
 
 By now you should hopefully be pro at electron ipc. This is a very important topic, because it also extends to web development. You can [explore](https://www.w3schools.com/html/html5_webworkers.asp) if you are interested
