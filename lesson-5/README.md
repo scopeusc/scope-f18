@@ -1,4 +1,4 @@
-# Lesson 5 - Youtube Wrapper App - Interprocess Communication and Windows Management
+# Lesson 5 - Cryptocurrency Tracker - Interprocess Communication and Windows Management
 In previous lessons, we briefly went over some features of ipc, but have never really explained how ipc works. Now, we are going to uncover the power of ipc in depth through making a multi-windowed application.
 
 ## Part 1 - Interprocess Communication (IPC)
@@ -147,7 +147,7 @@ Here we are simply receiving the data we sent from `main.js`. The actual data pr
 Run your application with `npm start` inside your working directory (The same folder where your `package.json` is, not `src` folder!). You should see something like this:
 ![Main UI](ui1.png)
 
-I am sorry if you are bothered by the misalignment of the prices. UI is not the priority of this lesson. However, it can be a good exercise for you to fix it.
+I am sorry if you are bothered by the misalignment of the prices, me too, but UI is not the priority of this lesson. However, it can be a good exercise for you if you want to fix it.
 
 ## Part 5 - Create the popup windows
 In this final part of the tutorial, we are sending a message from the a render process and processing it in `main.js`
@@ -221,6 +221,6 @@ window.on('closed', () => {
 `closed` is another special reserved event. In this case, we tell electron to close the app when the main window is closed.
 
 If you run the application and click the popout buttons, you get little floating windows that you can freely drag around on your screen:
-![popup](ui2.png)
+![popup](ui2.PNG)
 
 By now you should hopefully be pro at electron ipc. This is a very important topic, because it also extends to web development. You can [explore](https://www.w3schools.com/html/html5_webworkers.asp) if you are interested
