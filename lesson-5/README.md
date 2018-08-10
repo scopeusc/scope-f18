@@ -147,8 +147,6 @@ Here we are simply receiving the data we sent from `main.js`. The actual data pr
 Run your application with `npm start` inside your working directory (The same folder where your `package.json` is, not `src` folder!). You should see something like this:
 ![Main UI](ui1.png)
 
-I am sorry if you are bothered by the misalignment of the prices, me too, but UI is not the priority of this lesson. However, it can be a good exercise for you if you want to fix it.
-
 ## Part 5 - Create the popup windows
 In this final part of the tutorial, we are sending a message from the a render process and processing it in `main.js`
 

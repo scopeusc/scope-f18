@@ -13,8 +13,8 @@ function refreshTable(arg){
         let newElement = `
         <div class="crypto">
             <div class="crypto-info">
-            <img class="crypto-img" src="${img}"/>
-            <span class="crypto-name">${coin.name}</span>
+                <img class="crypto-img" src="${img}"/>
+                <span class="crypto-name">${coin.name}</span>
             </div>
             <div class="crypto-price">$${coin.quotes.USD.price} USD</div>
             <div class="crypto-change ${percentChangeClass}">${coin.quotes.USD.percent_change_24h} %</div>
