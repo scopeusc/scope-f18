@@ -48,10 +48,15 @@ Menu.setApplicationMenu(null)
 Now let’s define the menu object ‘template’ at `TODO: PART 3 - B`:
 ```js
 let template = [{
-  label: 'Start'
+  label: 'Timer',
+  submenu: [{
+    label: 'Start'
+  }]
 }]
 ```
-If you run the app now, you will see that there is a button called `start` on the top left, but clicking it doesn’t do anything yet, because we haven’t connected the button with the renderer script.
+If you run the app now, you will see that there is a button called `Timer` on the top left. The `Timer` button opens up a submenu with a single option `Start`, but clicking the `Start` button doesn’t do anything yet, because we haven’t connected the button with the renderer script.
+
+Note: On macOS, your menu is on the top left. It is going to say `Electron` instead of `Timer` because in macOS the first menu item is always the name of the application. Since currently we are running the app through npm, it is always going to say `Electron`. You will be able to change the name of your application when you package and deploy it.
 
 ![Part 2 Progress](part-3.png)
 ## Part 4 - Connect menu with timer
@@ -61,7 +66,7 @@ There are two js files inside your project folder so far, and they run in separa
 
 However, communication between processes is difficult, but luckily, electron has an easy-to-use ipc(interprocess communication) API. Using this API, you can send any messages with a channel name between any processes.
 
-Inside your menu template object (at `TODO: PART 2 - B`), add a click handler for the start button:
+Inside your menu template object (at `TODO: PART 3 - B`), add a click handler for the start button:
 ```js
 click: function (item, focusedWindow) {
   if (focusedWindow) {
@@ -97,5 +102,4 @@ Now you should have a basic pomodoro app working!
 
 ## Part 5 - Bonus Challenges
 1. Add more options to the menu to start different timers.
-2. Too many menu items can clutter the screen, explore how sub-menu works
 

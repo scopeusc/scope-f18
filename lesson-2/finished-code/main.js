@@ -7,12 +7,15 @@ let mainWindow
 
 // TODO: PART 3 - B
 let template = [{
-  label: 'Start',
-  click: function (item, focusedWindow) {
-    if (focusedWindow) {
-      focusedWindow.webContents.send('start timer', 5);
+  label: 'Timer',
+  submenu: [{
+    label: 'Start',
+    click: function (item, focusedWindow) {
+      if (focusedWindow) {
+        focusedWindow.webContents.send('start timer', 5);
+      }
     }
-  }
+  }]
 }]
 
 function createWindow () {
