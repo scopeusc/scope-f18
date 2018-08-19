@@ -74,7 +74,7 @@ the head elements of our index.html file
 When we run the app now with `npm start` you should see a window that opens with two sides, we can type into the left side,
 but nothing happens yet. 
 
-## Part 3 Adding Javascript
+## Part 3: Adding Javascript
 
 We want whatever we type on the left to show up on the right, and we can do this with Javascript. Let's add some script tags to the bottom of our index.html file that will handle this logic. We want a function that will take the text entered in the text area on the left, and display it on the right after rending the text according to the Markdown tags. 
 
@@ -107,7 +107,7 @@ Once this is done, run the app with `npm start` and you'll see that we now have 
 <link rel="stylesheet" href="normalize.css">
 ```
 
-## Part 4 Adding button
+## Part 4: Making things easier
 
 Our app is working now! Although, there is one feature we could add to make our app a little more useful since we'll always be copying and pasting our Markdown somewhere else after we're done formatting. We can make our lives easier by including a button that can save our text to the clipboard, which Electron can easily interface with if we import the clipboard module. 
 
