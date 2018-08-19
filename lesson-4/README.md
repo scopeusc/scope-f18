@@ -3,14 +3,14 @@
 
 In this lesson we’ll be creating a text editor that will let us write Markdown quickly and easily on our desktop. We’ll be learning how to use keyboard shortcuts and save to the system clipboard which will make our app more convenient and faster to use. 
 
-**Part 1: Setup**
+## Part 1: Setup
 
 We've included a package.json, basic index.js and a number of CSS files in this lessons folder to make starting the project easier. If you look at the index.js, it basically creates a new window, loads 'index.html' into it, and displays it when the app is ready. It also handles closing windows and the application, which are things we have covered in previous lessons.
 
 Once you install the project dependencies with `npm install` you'll be ready to start coding.
 
 
-**Creating the App**
+## Part 2: Creating index.html
 
 The entry point in our package.json is index.js, which loads the main window with index.html, so let's start by creating this file. 
 
@@ -74,6 +74,8 @@ the head elements of our index.html file
 When we run the app now with `npm start` you should see a window that opens with two sides, we can type into the left side,
 but nothing happens yet. 
 
+## Part 3 Adding Javascript
+
 We want whatever we type on the left to show up on the right, and we can do this with Javascript. Let's add some script tags to the bottom of our index.html file that will handle this logic. We want a function that will take the text entered in the text area on the left, and display it on the right after rending the text according to the Markdown tags. 
 
 ```
@@ -104,6 +106,8 @@ Once this is done, run the app with `npm start` and you'll see that we now have 
 <link rel="stylesheet" href="skeleton.css">
 <link rel="stylesheet" href="normalize.css">
 ```
+
+## Part 4 Adding button
 
 Our app is working now! Although, there is one feature we could add to make our app a little more useful since we'll always be copying and pasting our Markdown somewhere else after we're done formatting. We can make our lives easier by including a button that can save our text to the clipboard, which Electron can easily interface with if we import the clipboard module. 
 
