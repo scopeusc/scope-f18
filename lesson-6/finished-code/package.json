@@ -10,6 +10,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager Electron-Youtube --all --version=1.0.0"
+    "package": "electron-packager Electron-Youtube --all --electron-version=2.0.5"
   }
 }

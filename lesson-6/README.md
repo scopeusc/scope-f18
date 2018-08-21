@@ -19,14 +19,14 @@ The electron version specifies which version of electron you’ll use (latest no
 
 So, an example packaging command may be:
 ```
-electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2.0.5
+electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.5
 ```
 # Scripting the packaging of our application
 Another way that you could build your final application package is by adding a script to the **package.json** file.  Take the below file for example:
 ```
 "scripts": {
   "start": "electron .",
-  "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2.0.5"
+  "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.5"
 }
 ```
 The above **package.json** would allow you to simply run `npm run-script package` from your project directory (../lesson-6) and it would run the same command that we just ran manually.
