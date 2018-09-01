@@ -128,3 +128,193 @@ app.on('ready', function() {
     });
 });
 ```
+
+Next, add the following code to your **index.js** file in order to simulate a button click and use the selector that we created (above).
+
+```
+ipc.on('global-shortcut', function (arg) {
+    var event = new MouseEvent('click');
+    soundButtons[arg].dispatchEvent(event);
+});
+```
+
+# Defining modifier key configurations
+The next portion of this tutorial is focused on creating a settings window to allow modifier keys to be set/changed, depending on the user's needs.  We'll be adding four components:
+
+1. A settings button
+2. A settings window, linked to the above button
+3. Signals to toggle the settings window (via IPC)
+4. Persistant user configuration data management
+
+## Settings button/window creation
+Begin by adding code to your **index.js** to send a message when the settings button is clicked by the user.  You can do that in the following manner:
+
+```
+var settingsEl = document.querySelector('.settings');
+settingsEl.addEventListener('click', function () {
+    ipc.send('open-settings-window');
+});
+```
+
+Now, we must implement the event that's triggered by that message in **main.js**.  This can be done by listening on the "open-settings-window" channel and producing the setting's window.  Add the following code to your **main.js** file.
+
+```
+var settingsWindow = null;
+
+ipc.on('open-settings-window', function () {
+    if (settingsWindow) {
+        return;
+    }
+
+    settingsWindow = new BrowserWindow({
+        frame: false,
+        height: 200,
+        resizable: false,
+        width: 200
+    });
+
+    settingsWindow.loadUrl('file://' + __dirname + '/app/settings.html');
+
+    settingsWindow.on('closed', function () {
+        settingsWindow = null;
+    });
+});
+```
+
+Additionally, we must implement code to close that window when we're done.  Create a new file called **settings.js** with the following:
+
+```
+'use strict';
+
+var ipc = require('ipc');
+
+var closeEl = document.querySelector('.close');
+closeEl.addEventListener('click', function (e) {
+    ipc.send('close-settings-window');
+
+```
+
+And of course, we have to add the corresponding IPC code to our **main.js**:
+
+```
+
+ipc.on('close-settings-window', function () {
+    if (settingsWindow) {
+        settingsWindow.close();
+    }
+});
+```
+
+## Working with persistant user configurations
+To handle our settings files, we'll be using the *nconf* module.  To ensure that it's installed on your device, run `npm install --save nconf` which will save the module as a dependency for our application.
+
+Next, we need to create our configuration file.  Open up a new file in the project root directory, call it **configuration.js**, and paste the following contents:
+
+```
+'use strict';
+
+var nconf = require('nconf').file({file: getUserHome() + '/sound-machine-config.json'});
+
+function saveSettings(settingKey, settingValue) {
+    nconf.set(settingKey, settingValue);
+    nconf.save();
+}
+
+function readSettings(settingKey) {
+    nconf.load();
+    return nconf.get(settingKey);
+}
+
+function getUserHome() {
+    return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+}
+
+module.exports = {
+    saveSettings: saveSettings,
+    readSettings: readSettings
+};
+```
+
+Next, we'll need to initialize the variables that store our user settings.  Head back over to **main.js** and require the configuration module:
+
+```
+'use strict';
+
+var configuration = require('./configuration');
+
+app.on('ready', function () {
+    if (!configuration.readSettings('shortcutKeys')) {
+        configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
+    }
+    ...
+}
+```
+
+To account for this change, we'll need to make another small modification to **main.js** by removing the registration of shortcut keys:
+
+```
+app.on('ready', function () {
+    ...
+    setGlobalShortcuts(); 
+}
+
+function setGlobalShortcuts() {
+    globalShortcut.unregisterAll();
+
+    var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
+    var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
+
+    globalShortcut.register(shortcutPrefix + '1', function () {
+        mainWindow.webContents.send('global-shortcut', 0);
+    });
+    globalShortcut.register(shortcutPrefix + '2', function () {
+        mainWindow.webContents.send('global-shortcut', 1);
+    });
+}
+```
+
+## Settings window interactions
+Nearly done!  All we have let to do is bind the behavior in our settings window and register the IPC corresponding to settings changes.  Within **settings.js**, bind the click events and checkbox behavior:
+
+```
+
+var configuration = require('../configuration.js');
+
+var modifierCheckboxes = document.querySelectorAll('.global-shortcut');
+
+for (var i = 0; i < modifierCheckboxes.length; i++) {
+    var shortcutKeys = configuration.readSettings('shortcutKeys');
+    var modifierKey = modifierCheckboxes[i].attributes['data-modifier-key'].value;
+    modifierCheckboxes[i].checked = shortcutKeys.indexOf(modifierKey) !== -1;
+    modifierCheckboxes[i].addEventListener('click', function (e) {
+        bindModifierCheckboxes(e);
+    });
+}
+
+function bindModifierCheckboxes(e) {
+    var shortcutKeys = configuration.readSettings('shortcutKeys');
+    var modifierKey = e.target.attributes['data-modifier-key'].value;
+
+    if (shortcutKeys.indexOf(modifierKey) !== -1) {
+        var shortcutKeyIndex = shortcutKeys.indexOf(modifierKey);
+        shortcutKeys.splice(shortcutKeyIndex, 1);
+    }
+    else {
+        shortcutKeys.push(modifierKey);
+    }
+
+    configuration.saveSettings('shortcutKeys', shortcutKeys);
+    ipc.send('set-global-shortcuts');
+}
+view raw
+```
+
+And then, add the final IPC to **main.js**:
+
+```
+ipc.on('set-global-shortcuts', function () {
+    setGlobalShortcuts();
+});
+```
+
+Congratulations!  Start up your Electron application and enjoy!
