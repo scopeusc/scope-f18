@@ -2,7 +2,7 @@
   
 ## **Introduction**
 
-Welcome to Scope - Fall 2018!
+**Welcome to Scope - Fall 2018!**
 
 We’re excited to be teaching Electron this semester, a framework that lets you create native desktop applications with pure Javascript. For those of you who were here last semester and learned Node.js, you can think of Electron as a variant of Node that runs on your desktop instead of a server. 
 
@@ -34,7 +34,7 @@ All of our Electron projects this semester will be using HTML, CSS, and Javascri
 
 **HTML - Hypertext Markup Language**
 * The language that describes the components of a webpage like the text, buttons, forms, and so on
-* Here's a few links that great for learning HTML 
+* Here's a few links that are great for learning HTML 
   * https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started 
   * https://www.w3schools.com/html/,
   * https://www.codecademy.com/learn/learn-html
@@ -42,7 +42,7 @@ All of our Electron projects this semester will be using HTML, CSS, and Javascri
 **CSS - Cascading Style Sheets**
 * Used to style the design of the components of the page
 * Changing the font color or size, setting the size of components or changing how they appear to the user
-* Here's a few links that great for learning CSS 
+* Here's a few links that are great for learning CSS 
   * https://developer.mozilla.org/en-US/docs/Learn/CSS 
   * https://www.w3schools.com/css/
   * https://www.codecademy.com/learn/learn-css
@@ -50,7 +50,7 @@ All of our Electron projects this semester will be using HTML, CSS, and Javascri
 **Javascript**
 * Make websites dynamic by giving us the ability to change parts of the page based on certain conditions like user actions
 * For example, triggering a message to pop up once a form is submitted
-* Here's a few links that great for learning Javascript 
+* Here's a few links that are great for learning Javascript 
   * https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics 
   * https://www.w3schools.com/js/
   * https://www.codecademy.com/learn/introduction-to-javascript
