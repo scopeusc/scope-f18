@@ -8,7 +8,7 @@ We’re excited to be teaching Electron this semester, a framework that lets you
 
 Electron uses web pages as the basis for application windows, and so if you know how to write HTML/CSS code, you can get started writing Electron apps almost immediately. 
 
-You might be wondering, if Electron is basically just a wrapper for a website, why do we need it? The really awesome part of Electron is that it gives you a lot more control and access to the users computer than a typical web app through its rich operating system API’s. This means we can do things that a normal website wouldn’t be able to do like read and write to the file system, read CPU and other hardware usage statistics, and do pretty much anything else a normal desktop app would do. Electron has a demo app that demonstrates its API capabilities, which is pretty helpful: https://github.com/electron/electron-api-demos/releases
+You might be wondering, if Electron is basically just a wrapper for a website, why do we need it? The really awesome part of Electron is that it gives you a lot more control and access to the users computer than a typical web app through its rich operating system API’s. This means we can do things that a normal website wouldn’t be able to do like read and write to the file system, read CPU and other hardware usage statistics, and do pretty much anything else a normal desktop app would do. Electron has a helpful demo app that demonstrates its API capabilities: https://github.com/electron/electron-api-demos/releases
 
 ## **Setup**
 
