@@ -8,7 +8,7 @@ We’re excited to be teaching Electron this semester, a framework that lets you
 
 Electron uses web pages as the basis for application windows, and so if you know how to write HTML/CSS code, you can get started writing Electron apps almost immediately. 
 
-You might be wondering, if Electron is basically just a wrapper for a website, why do we need it? The really awesome part of Electron is that it gives you a lot more control and access to the users computer than a typical web app through its rich operating system API’s. This means we can do things that a normal website wouldn’t be able to do like read and write to the file system, read CPU and other hardware usage statistics, and do pretty much anything else a normal desktop app would do. Electron has a helpful demo app that demonstrates its API capabilities: https://github.com/electron/electron-api-demos/releases
+You might be wondering, if Electron is basically just a wrapper for a website, why do we need it? The really awesome part of Electron is that it gives you a lot more control and access to the users computer than a typical web app through its rich operating system API’s. This means we can do things that a normal website wouldn’t be able to do like read and write to the file system, read CPU and other hardware usage statistics, and do pretty much anything else a normal desktop app would do. 
 
 ## **Setup**
 
@@ -27,6 +27,9 @@ https://code.visualstudio.com/docs/introvideos/basics
 Now that we have our editor installed, we need to install Electron. This can be done through NPM (Node Package Manager), which we will do locally once we create our first project. 
 
 For everyone who worked with Node.js last semester, npm should already be installed on your computer because its installed together with Node. If anyone doesn’t have Node.js or npm installed, you can get it here https://nodejs.org/en/. We will be using Node version 8.9.3 and Electron version 2.0.2 as recommended by the Electron webpage and recommend these versions for all Scopers this semester. 
+
+## **Electron API Demo App**
+Electron has a helpful demo app that demonstrates a ton of cool things it can do and will be a useful reference throughout the semester. You can download the zip for your specific operating system at https://github.com/electron/electron-api-demos/releases. Once you unzip the folder you can run the application, which will give you a good idea of what an Electron app actually looks and feels like. After exploring the app a little, you'll be pretty much set up for next week's lesson.
 
 ## **Overview of HTML, CSS, and Javascript**
 
