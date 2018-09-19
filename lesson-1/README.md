@@ -29,7 +29,9 @@ Now that we have our editor installed, we need to install Electron. This can be 
 For everyone who worked with Node.js last semester, npm should already be installed on your computer because its installed together with Node. If anyone doesn’t have Node.js or npm installed, you can get it here https://nodejs.org/en/. We will be using Node version 8.9.3 and Electron version 2.0.2 as recommended by the Electron webpage and recommend these versions for all Scopers this semester. 
 
 ## **Electron API Demo App**
-Electron has a helpful demo app that demonstrates a ton of cool things it can do and will be a useful reference throughout the semester. You can download the zip for your specific operating system at https://github.com/electron/electron-api-demos/releases. Once you unzip the folder you can run the application, which will give you a good idea of what an Electron app actually looks and feels like. After exploring the app a little, you'll be pretty much set up for next week's lesson.
+Electron has a helpful demo app that demonstrates a ton of cool things it can do and will be a useful reference throughout the semester. You can download the zip for your specific operating system at https://github.com/electron/electron-api-demos/releases. 
+
+Once you unzip the folder you can run the application, which will give you a good idea of what an Electron app actually looks and feels like. After exploring the app a little, you'll be ready for the first mini-project next week. 
 
 ## **Overview of HTML, CSS, and Javascript**
 
