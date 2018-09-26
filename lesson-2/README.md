@@ -1,5 +1,5 @@
 # Lesson 2 - Pomodoro Timer App - Creating your first window with a native menu bar
-Developing desktop applications used to be a difficult and tedious task. Today, Electron makes desktop application development surprisingly easy. In this lesson, we are going to show you how quickly we can create a pomodoro timer app with Electorn.
+Developing desktop applications used to be a difficult and tedious task. Today, Electron makes desktop application development surprisingly easy. In this lesson, we are going to show you how quickly we can create a pomodoro timer app with Electron.
 
 ## Part 1 - Setup
 **Project Structure:**
@@ -7,12 +7,12 @@ Developing desktop applications used to be a difficult and tedious task. Today, 
 * `index.html` - The web view for the main window
 * `renderer.js` - External Javascript for the main window
 * `style.css` - External stylesheet for the main window
-* `package.json` and `package-lock.json` - Holds the details of your project and its dependencies
+* `package.json` and `package-lock.json` - Hold the details of your project and its dependencies
 
-By now you should already have this repository cloned onto your computer. Navigate to `lesson-2/starter-code` from ther terminal and run `npm install` to install all the necessary modules for this project.
+By now you should already have this repository cloned onto your computer. Navigate to `lesson-2/starter-code` from the terminal and run `npm install` to install all the necessary modules for this project.
 
 ## Part 2 - Creating your first window
-If you open `main.js`, you will see that we have already done some coding for you to get you started. On `line 2`, you should see
+If you open `main.js`, you will see that we have already have some code to get you started. On `line 2`, you should see
 ```js
 const { app, BrowserWindow, Menu } = require('electron')
 ```
@@ -30,7 +30,7 @@ creates a `400x300` window that is not resizable. After we have our window, whic
 ```js
 mainWindow.loadFile('index.html')
 ```
-If you run your app now with the command npm start, you should have the following window
+If you run your app now with the command "npm start", you should have the following window
 
 ![Part 2 Progress](part-2.png)
 ## Part 3 - Menu Configuration
