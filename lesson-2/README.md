@@ -77,12 +77,15 @@ click: function (item, focusedWindow) {
 sends `5` in channel `start timer` to the renderer process. Your menu template object should look like this:
 ```js
 let template = [{
-  label: 'Start',
-  click: function (item, focusedWindow) {
-    if (focusedWindow) {
-      focusedWindow.webContents.send('start timer', 5);
+  label: 'Timer',
+  submenu: [{
+    label: 'Start',
+    click: function (item, focusedWindow) {
+      if (focusedWindow) {
+        focusedWindow.webContents.send('start timer', 5);
+      }
     }
-  }
+  }]
 }]
 ```
 
