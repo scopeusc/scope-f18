@@ -101,5 +101,7 @@ To receive `5` and pass it in function `startTimer` to start the timer.
 Now you should have a basic pomodoro app working!
 
 ## Part 5 - Bonus Challenges
-1. Add more options to the menu to start different timers.
+1. Add more options to the menu to start different timers
+2. Add pause/resume button
+3. Add keyboard shortcut for starting and stopping
 
