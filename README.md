@@ -1,6 +1,6 @@
 # Scope Fall 2018: Electron
 
-This is the Scope Fall 2018 GitHub curriculum repository! Here you'll find projects and resources that will help you learn Electron throughout the semester. Here you'll find a folder for every lesson. Within each folder is a project and a README.md that will guide you step-by-step on how to build the project for that lesson.
+This is the Scope Fall 2018 GitHub curriculum repository! Here you'll find projects and resources that will help you learn Electron throughout the semester. Here you'll find a folder for every lesson. Within each folder is a project and a `README.md` that will guide you step-by-step on how to build the project for that lesson.
 
 ### Curriculum Outline
 * [**Lesson 1**](lesson-1): Introduction to Electron; Environment Setup
