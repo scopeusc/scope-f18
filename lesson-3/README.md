@@ -1,6 +1,6 @@
 # Lesson 3:  Simple Soundboard
 
-Before beginning, be sure to change your working directory to the **scope-f18** repository.  Once you’re inside the repository, change directory once again to the [lesson-3/starter-code](starter-code) folder.
+Before beginning, be sure to change your working directory to the **scope-f18** repository and run `git pull`.  Once you’re inside the repository, change directory once again to the [lesson-3/starter-code](starter-code) folder.
 
 ## Part 1 - Setup
 **Project Structure:**
