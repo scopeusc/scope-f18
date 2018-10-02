@@ -13,6 +13,6 @@ This is the Scope Fall 2018 GitHub curriculum repository! Here you'll find proje
 ### Using This Repo
 To use this repo properly, first follow [lesson 1](lesson-1/README.md) to get Git, Node, Electron, and the right environment setup on your machine.
 
-For every lesson, there's a project and a README.md that corresponds to that project. The project will contain the full finished code for that lesson and the README.md will walk you step-by-step on how to build that week's project from scratch.
+For every lesson, there's a project and a `README.md` that corresponds to that project. The project will contain the full finished code for that lesson and the `README.md` will walk you step-by-step on how to build that week's project from scratch.
 
 We hope you'll follow along our curriculum and get started building Web apps. It's going to be a fun semester and we're glad you're a part of it!
