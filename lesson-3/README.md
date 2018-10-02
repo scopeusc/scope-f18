@@ -60,7 +60,11 @@ Within the body of this loop, we need to access the DIV we created above and cre
 
 
 ```js
-document.getElementById("audioDiv").innerHTML += "<audio id=\"" + String.fromCharCode(i) + "\" src=\"sounds/" + String.fromCharCode(i) + ".mp3\" preload=\"auto\"></audio>"
+document.getElementById("audioDiv").innerHTML += "<audio id=\""
++ String.fromCharCode(i)
++ "\" src=\"sounds/"
++ String.fromCharCode(i)
++ ".mp3\" preload=\"auto\"></audio>"
 ```
 
 ### Create the Key Press Event Handler
