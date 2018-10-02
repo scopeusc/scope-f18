@@ -14,7 +14,7 @@ Run a quick `npm install` from there to be sure that Node is properly setup and 
 ## Part 2 - Setting Up the Web View
 Open up `index.html` and you'll notice that the file looks essentially like a template for any old Electron application.  We'll be adding some content to make it into our soundboard.
 
-First, give your web view a fun title.  Our example below is a bit basic:
+First, give your web view a fun title (within the `<head></head>` tags).  Our example below is a bit basic:
 
 ```HTML
 <title>Simple Soundboard</title>
