@@ -4,10 +4,10 @@ Before beginning, be sure to change your working directory to the **scope-f18** 
 
 ## Part 1 - Setup
 **Project Structure:**
-* `index.html` - The web view for the main window
-* `main.js` - The main electron application script
-* `package.json` - Hold the details of your project and its dependencies
-* `sounds/` - The sound file for our simple soundboard
+* [`index.html`](starter-code/index.html) - The web view for the main window
+* [`main.js`](starter-code/main.js) - The main electron application script
+* [`package.json`](starter-code/package.json) - Holds the details of your project and its dependencies
+* [`sounds/`](starter-code/sounds/) - The sound files for our simple soundboard
 
 Run a quick `npm install` from there to be sure that Node is properly setup and that the Electron application dependencies are installed.
 
