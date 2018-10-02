@@ -3,12 +3,12 @@
 This is the Scope Fall 2018 GitHub curriculum repository! Here you'll find projects and resources that will help you learn Electron throughout the semester. Here you'll find a folder for every lesson. Within each folder is a project and a README.md that will guide you step-by-step on how to build the project for that lesson.
 
 ### Curriculum Outline
-* [Lesson 1](lesson-1): Introduction to Electron; Environment Setup
-* [Lesson 2](lesson-2): Pomodoro Timer - Native Menu System
-* [Lesson 3](lesson-3): Simple Soundboard - Filesystem API
-* [Lesson 4](lesson-4): Markdown Editor - System Clipboard and Keyboard Shortcuts
-* [Lesson 5](lesson-5): Cryptocurrency Tracker - Interprocess Communication and Windows Management
-* [Lesson 6](lesson-6): App Deployment and Review
+* [**Lesson 1**](lesson-1): Introduction to Electron; Environment Setup
+* [**Lesson 2**](lesson-2): Pomodoro Timer - Native Menu System
+* [**Lesson 3**](lesson-3): Simple Soundboard - Filesystem API
+* [**Lesson 4**](lesson-4): Markdown Editor - System Clipboard and Keyboard Shortcuts
+* [**Lesson 5**](lesson-5): Cryptocurrency Tracker - Interprocess Communication and Windows Management
+* [**Lesson 6**](lesson-6): App Deployment and Review
 
 ### Using This Repo
 To use this repo properly, first follow [lesson 1](lesson-1/README.md) to get Git, Node, Electron, and the right environment setup on your machine.
