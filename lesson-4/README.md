@@ -21,7 +21,6 @@ We need our main window to show us two separate views, one for us type markdown 
     <meta charset="utf-8" />
     <title>Markdown Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 </head>
 <div class="container-fluid">
         <div class="row w-100">
