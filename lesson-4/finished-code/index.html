@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Markdown Editor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<link rel="stylesheet" href="skeleton.css">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row w-100">
+			<div id="leftSide" class="col">
+				<textarea type="text" id="input" onkeyup="updateRightSide()"></textarea>
+			</div>
+			<div id="rightSide" class="col">
+			</div>
+		</div>
+		<div id="footer" class="row">
+			<div class="col w-100">
+				<button type="button" id="copyButton" onclick="copyText()" class="btn">Copy Text</button>
+			</div>
+		</div>
+	</div>
+	<script>
+	const marked = require('marked');
+	function updateRightSide () {
+		var inputText = document.getElementById('input').value;
+		document.getElementById('rightSide').innerHTML = marked(inputText);
+	}
+
+	function copyText() {
+		const {clipboard} = require('electron')
+		clipboard.writeText(document.getElementById("input").value)
+	}
+	</script>
+</body>
+</html>
