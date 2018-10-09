@@ -59,6 +59,7 @@ html, body {
 }
 .row {
     height: 100%;
+    position: absolute;
 }
 #input {
     border: 0;
