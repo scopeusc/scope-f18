@@ -1,7 +1,7 @@
 # **Lesson 4 - Markdown Editor**
 **Introduction**
 
-In this lesson we’ll be creating a text editor that will let us write Markdown quickly and easily on our desktop. We’ll be learning how to use keyboard shortcuts and save to the system clipboard which will make our app more convenient and faster to use. 
+In this lesson we’ll be creating a text editor that will let us write Markdown quickly and easily on our desktop. Before starting, make sure you `git pull` to get the most up-to-date code. 
 
 ## Part 1: Setup
 
@@ -133,6 +133,6 @@ function copyText() {
 ```
 This function just uses the clipboard module to write the text we have input to the system clipboard so that we can paste it wherever we need it easily. You will have to add some styling to position the button correctly but all you need to connect it is Javascript. 
 
-Our application is now completed and you can use it to make well formatted and beautiful readme's for your current and future Github readme's or anything else :)
+We've now built a simple application that can be used to create Markdown documents on the fly. What can you add to make it more useful or awesome?
 
 
