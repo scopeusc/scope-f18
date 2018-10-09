@@ -131,7 +131,8 @@ function copyText() {
     clipboard.writeText(document.getElementById("input").value)
 }
 ```
-This function just uses the clipboard module to write the text we have input to the system clipboard so that we can paste it wherever we need it easily. 
+This function just uses the clipboard module to write the text we have input to the system clipboard so that we can paste it wherever we need it easily. You will have to add some styling to position the button correctly but all you need to connect it is Javascript. 
+
 Our application is now completed and you can use it to make well formatted and beautiful readme's for your current and future Github readme's or anything else :)
 
 
