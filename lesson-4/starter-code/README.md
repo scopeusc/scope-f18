@@ -16,26 +16,38 @@ The entry point in our package.json is index.js, which loads the main window wit
 
 We need our main window to show us two separate views, one for us type markdown in, and the other to show us the result. The idea is that we'll be able to type markdown on the left side and see the result on the right side. 
 
-```
-<div class="container-fluid">
-        <div class="row w-100">
-          <div id="leftSide" class="col">
-            <textarea type="text" id="input"></textarea>
-          </div>
-          <div id="rightSide" class="col">
-          </div>
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Markdown Editor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+                <div class="row w-100">
+                <div id="leftSide" class="col">
+                    <textarea type="text" id="input"></textarea>
+                </div>
+                <div id="rightSide" class="col">
+                </div>
+                </div>
+                <div id="footer" class="row">
+                    <div class="col w-100">
+                    </div>
+                </div>
         </div>
-        <div id="footer" class="row">
-            <div class="col w-100">
-            </div>
-        </div>
-</div>
+    </body>
+</html>
 ```
 
 We’re using bootstrap to make some of the dynamic sizing easy, and also some custom CSS that will control the styling for our window.
 
 Create an index.css file and add the following code
-```
+```css
 html, body {
     height: 100%;
     width: 100%;
@@ -54,6 +66,7 @@ html, body {
 }
 .row {
     height: 100%;
+    position: absolute;
 }
 #input {
     border: 0;
@@ -66,7 +79,7 @@ html, body {
 ```
 Now that we have styling for the page, we need to add a link to this CSS file and a link to Bootstrap within
 the head elements of our index.html file
-```
+```html
 <link rel="stylesheet" type="text/css" href="index.css" />
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 ```
@@ -78,7 +91,7 @@ but nothing happens yet.
 
 We want whatever we type on the left to show up on the right, and we can do this with Javascript. Let's add some script tags to the bottom of our index.html file that will handle this logic. We want a function that will take the text entered in the text area on the left, and display it on the right after rending the text according to the Markdown tags. 
 
-```
+```html
 <script>
     function updateRightSide () {
         var inputText = document.getElementById('input').value;
@@ -102,7 +115,7 @@ above our update function. We want to translate our Markdown entered on the left
 
 Once this is done, run the app with `npm start` and you'll see that we now have a basic version of a live markdown editor that will run as a native desktop application. The resulting Markdown might not be as nicely styled as what you're used to, but we can change this by adding two extra CSS files that will make our Markdown a little bit more like what you would see on Github. Include links to these files at the top of our index.html with
 
-```
+```css
 <link rel="stylesheet" href="skeleton.css">
 <link rel="stylesheet" href="normalize.css">
 ```
@@ -112,13 +125,14 @@ Once this is done, run the app with `npm start` and you'll see that we now have 
 Our app is working now! Although, there is one feature we could add to make our app a little more useful since we'll always be copying and pasting our Markdown somewhere else after we're done formatting. We can make our lives easier by including a button that can save our text to the clipboard, which Electron can easily interface with if we import the clipboard module. 
 
 If we add a button to our index.html page, we just need the onclick action to run the following function
-```
+```js
 function copyText() {
     const {clipboard} = require('electron')
     clipboard.writeText(document.getElementById("input").value)
 }
 ```
-This function just uses the clipboard module to write the text we have input to the system clipboard so that we can paste it wherever we need it easily. 
+This function just uses the clipboard module to write the text we have input to the system clipboard so that we can paste it wherever we need it easily. You will have to add some styling to position the button correctly but all you need to connect it is Javascript. 
+
 Our application is now completed and you can use it to make well formatted and beautiful readme's for your current and future Github readme's or anything else :)
 
 

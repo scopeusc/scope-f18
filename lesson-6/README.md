@@ -1,4 +1,4 @@
-Before beginning, be sure to change your working directory to the **scope-f18** repository.  Once you’re inside the repository, change directory once again to the **lesson-6** folder.  Run a quick `npm install` from there to be sure that Node is properly setup.
+Before beginning, be sure to change your working directory to the **scope-f18** repository.  Once you’re inside the repository, change directory once again to the **lesson-6** folder.  We'll be using the application that you completed in Lesson 5 to demonstrate how you can package your application for distribution.  To begin, run a quick `npm install` to be sure that Node is properly setup.
 
 # Dependencies: electron-packager
 This week, we’ll be working on packaging up your Electron application in order to allow easy sharing and use of your new software.  To do this, we’ll be using the electron-packager tool.
@@ -15,18 +15,18 @@ The location of the project is simply the root directory of the project (i.e. ..
 The name of the project is a cool title that will be attached to the final package
 The platform determines which devices will be able to run the package.  We’d recommend all for use on Windows, Mac, or Linux.
 The architecture determines which processing environment the program will be built for.  Again, all is recommended to be interchangeable between 32-bit and 64-bit processors.
-The electron version specifies which version of electron you’ll use (latest now is 2.0.5).
+The electron version specifies which version of electron you’ll use (latest now is 2.0.7).
 
 So, an example packaging command may be:
 ```
-electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2.0.5
+electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.7
 ```
 # Scripting the packaging of our application
 Another way that you could build your final application package is by adding a script to the **package.json** file.  Take the below file for example:
 ```
 "scripts": {
   "start": "electron .",
-  "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --version=2.0.5"
+  "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.7"
 }
 ```
 The above **package.json** would allow you to simply run `npm run-script package` from your project directory (../lesson-6) and it would run the same command that we just ran manually.

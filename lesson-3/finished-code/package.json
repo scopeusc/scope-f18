@@ -1,0 +1,22 @@
+{
+  "name": "lesson-3",
+  "version": "1.0.0",
+  "description": "scope-f18/lesson-3",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scopeusc/scope-f18.git"
+  },
+  "author": "Christopher Turner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scopeusc/scope-f18/issues"
+  },
+  "homepage": "https://github.com/scopeusc/scope-f18#readme",
+  "devDependencies": {
+    "electron": "^3.0.2"
+  }
+}
