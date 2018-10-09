@@ -17,24 +17,31 @@ The entry point in our package.json is index.js, which loads the main window wit
 We need our main window to show us two separate views, one for us type markdown in, and the other to show us the result. The idea is that we'll be able to type markdown on the left side and see the result on the right side. 
 
 ```html
-<head>
-    <meta charset="utf-8" />
-    <title>Markdown Editor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<div class="container-fluid">
-        <div class="row w-100">
-          <div id="leftSide" class="col">
-            <textarea type="text" id="input"></textarea>
-          </div>
-          <div id="rightSide" class="col">
-          </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Markdown Editor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+                <div class="row w-100">
+                <div id="leftSide" class="col">
+                    <textarea type="text" id="input"></textarea>
+                </div>
+                <div id="rightSide" class="col">
+                </div>
+                </div>
+                <div id="footer" class="row">
+                    <div class="col w-100">
+                    </div>
+                </div>
         </div>
-        <div id="footer" class="row">
-            <div class="col w-100">
-            </div>
-        </div>
-</div>
+    </body>
+</html>
 ```
 
 We’re using bootstrap to make some of the dynamic sizing easy, and also some custom CSS that will control the styling for our window.
