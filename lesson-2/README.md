@@ -23,7 +23,7 @@ app.on('ready', createWindow)
 connects the ready event with a function called createWindow, and you will be writing the code to create your first window inside this function.
 
 Let's start creating your first window, enter the following lines on at `TODO: PART 2`
-```
+```js
 let mainWindow = new BrowserWindow({width: 400, height: 300, resizable: false})
 ```
 creates a `400x300` window that is not resizable. After we have our window, which is equivalent to a chrome tab, we can display a webpage called `index.html` inside it with the following code:
