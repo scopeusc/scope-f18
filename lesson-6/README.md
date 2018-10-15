@@ -7,7 +7,7 @@ To start, run `npm install electron-packager -g` which will install from node pa
 
 # Manually packaging our application
 There are two ways to package our application with electron-packager.  The first of those is done via the command-line interface.  You must run the command:
-```
+```Shell
 electron-packager <location of project> <name of project> <platform> <architecture> <electron version> <optional options>
 ```
 Where:
@@ -18,12 +18,12 @@ The architecture determines which processing environment the program will be bui
 The electron version specifies which version of electron you’ll use (latest now is 2.0.7).
 
 So, an example packaging command may be:
-```
+```Shell
 electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.7
 ```
 # Scripting the packaging of our application
 Another way that you could build your final application package is by adding a script to the **package.json** file.  Take the below file for example:
-```
+```JSON
 "scripts": {
   "start": "electron .",
   "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.7"
