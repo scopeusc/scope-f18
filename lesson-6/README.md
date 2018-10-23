@@ -17,7 +17,7 @@ The platform determines which devices will be able to run the package.  We’d r
 The architecture determines which processing environment the program will be built for.  Again, all is recommended to be interchangeable between 32-bit and 64-bit processors.
 The electron version specifies which version of electron you’ll use (latest now is 2.0.7).
 
-So, an example packaging command may be (from the **lesson-6** directory:
+So, an example packaging command may be (from the **lesson-6** directory):
 ```Shell
 electron-packager finished-code -all --electron-version=2.0.7
 ```
