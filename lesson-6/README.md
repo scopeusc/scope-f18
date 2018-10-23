@@ -19,5 +19,8 @@ The electron version specifies which version of electron you’ll use (latest no
 
 So, an example packaging command may be (from the **lesson-6** directory):
 ```Shell
-electron-packager finished-code -all --electron-version=2.0.7
+cd starter-code
+npm install
+cd ..
+electron-packager starter-code -all --electron-version=2.0.7
 ```
