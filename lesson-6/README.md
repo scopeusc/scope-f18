@@ -17,16 +17,7 @@ The platform determines which devices will be able to run the package.  We’d r
 The architecture determines which processing environment the program will be built for.  Again, all is recommended to be interchangeable between 32-bit and 64-bit processors.
 The electron version specifies which version of electron you’ll use (latest now is 2.0.7).
 
-So, an example packaging command may be:
+So, an example packaging command may be (from the **lesson-6** directory:
 ```Shell
-electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.7
+electron-packager finished-code -all --electron-version=2.0.7
 ```
-# Scripting the packaging of our application
-Another way that you could build your final application package is by adding a script to the **package.json** file.  Take the below file for example:
-```JSON
-"scripts": {
-  "start": "electron .",
-  "package": "electron-packager ~/GitHub/scope-f18/lesson-6 ScopeElectronApp --all --electron-version=2.0.7"
-}
-```
-The above **package.json** would allow you to simply run `npm run-script package` from your project directory (../lesson-6) and it would run the same command that we just ran manually.
